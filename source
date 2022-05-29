@@ -1,0 +1,230 @@
+-- Credits to me for the script and please do not use this
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Zection Client", "Ocean")
+
+local Tab1 = Window:NewTab("Combat")
+local Tab1Section = Tab1:NewSection("Combat Features")
+local Tab2 = Window:NewTab("Blatant")
+local Tab2Section = Tab2:NewSection("Blatant Features")
+local Tab3 = Window:NewTab("World")
+local Tab3Section = Tab3:NewSection("World Features")
+local Tab4 = Window:NewTab("Render")
+local Tab4Section = Tab4:NewSection("Render Features")
+local Tab5 = Window:NewTab("Hubs")
+local Tab5Section = Tab5:NewSection("Other scripts that i did not make")
+local Tab6 = Window:NewTab("Credits")
+local Tab6Section = Tab6:NewSection("Credits to YZHacker for Softbed")
+local Tab6Section = Tab6:NewSection("Credits To 7GrandDad for Vape V4")
+local Tab6Section = Tab6:NewSection("Credits To 8xpm8 for Monnlight")
+local Tab6Section = Tab6:NewSection("Credits to Engo for Future")
+
+
+
+Tab1Section:NewToggle("KillAura", "Automaticly swings your sword whe people are near", function(state)
+    if state then
+local kauravalv2 = v
+        repeat task.wait() until (matchState == 1)
+        if matchState == 1 then
+            spawn(function()
+                if kauravalv2 and entity.isAlive then
+                    conectionkillauraV2 = RunService.RenderStepped:Connect(function(step)
+                        if not kauravalv2 then 
+                            return
+                        end
+                        if entity.isAlive then
+                            if (not isclone) then
+                                local mouse = game.Players.LocalPlayer:GetMouse()
+                                for i,v in pairs(game.Players:GetChildren()) do
+                                    if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
+                                        local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                                        if mag <= 20 and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+                                            if v.Character:FindFirstChild("Head") then
+                                                game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged[landmineremote]:FireServer({
+                                                    ["invisibleLandmine"] = v.Character.Head                                        
+                                                })
+                                            end
+                                        end
+                                    end
+                                end 
+                            else
+                                local mouse = game.Players.LocalPlayer:GetMouse()
+                                for i,v in pairs(game.Players:GetChildren()) do
+                                    if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
+                                        local mag = (v.Character.HumanoidRootPart.Position - clone.HumanoidRootPart.Position).Magnitude
+                                        if mag <= 20 and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") and v.Character.Health > 0 then
+                                            if v.Character:FindFirstChild("Head") then
+                                                game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged[landmineremote]:FireServer({
+                                                    ["invisibleLandmine"] = v.Character.Head                                        
+                                                })
+                                            end
+                                        end
+                                    end
+                                end 
+                            end
+                        end
+                    end)
+                else
+                    conectionkillauraV2:Disconnect()
+                    return
+                end
+            end)
+        end
+    end
+  
+end)
+
+
+
+Tab3Section:NewButton("Anti void", "Dont Fall :0 ", function()
+    local specialpos = (workspace.MapCFrames:FindFirstChild("center") and workspace.MapCFrames.center.Value.p == Vector3.new(77, 11, 35))
+            AntiVoidP = Instance.new("Part")
+            AntiVoidP.Parent = Workspace
+            AntiVoidP.Name = "AntiVoid"
+            AntiVoidP.CanCollide = true
+            AntiVoidP.Size = Vector3.new(2048, 0.30, 2048)
+            AntiVoidP.Anchored = true
+            AntiVoidP.Transparency = 0.45
+            AntiVoidP.Material = Enum.Material.Grass
+            AntiVoidP.Color = Color3.fromRGB(34,139,34)
+            AntiVoidP.Position = Vector3.new(0, 30.5, 0)
+        print("...")
+    end)
+
+
+
+Tab1Section:NewToggle("NoClick Delay", "Removes CPS cap", function(state)
+        if state then
+    getgenv().funisus = v
+            spawn(function()
+                if getgenv().funisus and entity.isAlive then
+                    for i2,v2 in pairs(itemtable) do
+                        if type(v2) == "table" and rawget(v2, "sword") then
+                            v2.sword.attackSpeed = 0.000000001
+                        end
+                        SwordCont.isClickingTooFast = function() return false end
+                    end
+                else
+                end
+            end)
+        end
+     
+        end)
+
+        Tab2Section:NewButton("Cape", "Funny thing", function()
+            local player = game:GetService("Players")
+            
+            local lplr = player.LocalPlayer
+            
+            if lplr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+            
+                  if lplr.Character:FindFirstChild("Torso") then
+            
+                    torso = lplr.Character.Torso
+            
+                  else
+            
+                    torso = lplr.Character.UpperTorso
+            
+                  end
+            
+                  local CapeP = Instance.new("Part", torso.Parent)
+            
+                  CapeP.Name = "Cape"
+            
+                  CapeP.Anchored = false
+            
+                  CapeP.CanCollide = false
+            
+                  CapeP.TopSurface = 0
+            
+                  CapeP.BottomSurface = 0
+            
+                  CapeP.Color = Color3.fromRGB(0,0,0)
+            
+                  CapeP.FormFactor = "Custom"
+            
+                  CapeP.Size = Vector3.new(0.2,0.2,0.2)
+            
+                  local decal = Instance.new("Decal", CapeP)
+            
+                  decal.Texture = "http://www.roblox.com/asset/?id=9745849747"
+            
+                  decal.Face = "Back"
+            
+                  local msh = Instance.new("BlockMesh", CapeP)
+            
+                  msh.Scale = Vector3.new(9,17.5,0.5)
+            
+                  local motor = Instance.new("Motor", CapeP)
+            
+                  motor.Part0 = CapeP
+            
+                  motor.Part1 = torso
+            
+                  motor.MaxVelocity = 0.01
+            
+                  motor.C0 = CFrame.new(0,1.75,0) * CFrame.Angles(0,math.rad(90),0)
+            
+                  motor.C1 = CFrame.new(0,1,0.45) * CFrame.Angles(0,math.rad(90),0)
+            
+                  local wave = false
+            
+                  repeat wait(1/44)
+            
+                    decal.Transparency = torso.Transparency
+            
+                    local ang = 0.1
+            
+                    local oldmag = torso.Velocity.magnitude
+            
+                    local mv = 0.002
+            
+                    if wave then
+            
+                      ang = ang + ((torso.Velocity.magnitude/10) * 0.05) + 0.05
+            
+                      wave = false
+            
+                    else
+            
+                      wave = true
+            
+                    end
+            
+                    ang = ang + math.min(torso.Velocity.magnitude/11, 0.5)
+            
+                    motor.MaxVelocity = math.min((torso.Velocity.magnitude/111), 0.04) + mv
+            
+                    motor.DesiredAngle = -ang
+            
+                    if motor.CurrentAngle < -0.2 and motor.DesiredAngle > -0.2 then
+            
+                      motor.MaxVelocity = 0.04
+            
+                    end
+            
+                    repeat wait() until motor.CurrentAngle == motor.DesiredAngle or math.abs(torso.Velocity.magnitude - oldmag) >= (torso.Velocity.magnitude/10) + 1
+            
+                    if torso.Velocity.magnitude < 0.1 then
+            
+                      wait(0.1)
+            
+                    end
+            
+                  until not CapeP or CapeP.Parent ~= torso.Parent
+            
+                end
+            
+            
+                print("...")
+            end)
+
+
+            Tab2Section:NewToggle("Speed", "More speed", function(state)
+                if state then
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+                else
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+                end
+            end)
